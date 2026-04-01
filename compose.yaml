@@ -1,0 +1,47 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: php_app
+    volumes:
+      - .:/app:z
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_server
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/app:z
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:z
+    depends_on:
+      - app
+
+  db:
+    image: mariadb:10.6
+    container_name: mariadb_db
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASS}
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./docker/db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  ngrok:
+    image: ngrok/ngrok:latest
+    container_name: ngrok
+    command: http ${NGROK_PORT}
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+    ports:
+      - "4040:4040"
+    depends_on:
+      - nginx
+
+volumes:
+  db_data:

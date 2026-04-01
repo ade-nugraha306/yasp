@@ -1,0 +1,1 @@
+# This is an template for every my php project
