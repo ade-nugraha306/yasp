@@ -47,4 +47,6 @@
     <input type="password" name="password" placeholder="Password" required><br>
 
     <button type="submit">Daftar</button>
+    <a href="/">Batal</a>
+    <a href="/login">Login</a>
 </form>

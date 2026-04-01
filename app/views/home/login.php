@@ -4,4 +4,5 @@
     <input type="email" name="email" placeholder="Email" required><br>
     <input type="password" name="password" placeholder="Password" required><br>
     <button type="submit">Login</button>
+    <p>Tidak punya akun? <a href="/register">Registrasi Disini</a></p>
 </form>
