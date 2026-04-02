@@ -21,6 +21,8 @@ YASP (Yet Another Sertikom Project) adalah project untuk syarat lulus dan kompet
 
 6. Ketika ingin membuat controller, anda bisa membuat nya di dalam folder `app/controllers/`
 
+7. Akses `localhost:80` atau `localhost:8080` sesuai port apache / nginx kalian untuk development lokal.
+
 ## Cara hosting project
 
 1. Pergi ke `https://www.infinityfree.com/`
