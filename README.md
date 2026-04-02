@@ -60,3 +60,5 @@ Contoh:
 ![connection-details](images/connection_details.png)
 
 ![databases-lists](images/databases-list.png)
+
+9. Setelah nya anda bisa "View Site" untuk masuk ke dalam website yang telah anda hosting di InfinityFree.
